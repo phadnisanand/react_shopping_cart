@@ -2,16 +2,15 @@ import React from 'react'
 import Product from './Product';
 import { Outlet, Link } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux'
-
+import { CartComponent } from './CartComponent';
 export function ProductListing(props) {
   const productItems = useSelector((state) => state.products)
   return (
     <>
       <div className="container bg-white">
           <h2>Products Listing</h2>
-
+          <CartComponent></CartComponent>
           <div className="row">
-            <p><Link to="cart">Cart Page</Link> </p>
             <p>Search Products <input type='text' name="search" id="search" /></p>
             <p>Search by Category &nbsp;
               <select>

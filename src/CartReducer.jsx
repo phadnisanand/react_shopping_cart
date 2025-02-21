@@ -22,6 +22,7 @@ const slice = createSlice({
     },
     decreaseCartItemQuantity(state, action) {
       const existingItemIndex = findItemIndex(state, action)
+      console.log(state[existingItemIndex]);
       state[existingItemIndex].quantity -= 1
       if (state[existingItemIndex].quantity === 0)
         state.splice(existingItemIndex, 1)

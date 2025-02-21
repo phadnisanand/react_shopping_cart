@@ -9,11 +9,12 @@ import { CartComponent } from './CartComponent';
 import { Cart } from './Cart';
 import { ProductDetails } from './ProductDetails';
 import 'font-awesome/css/font-awesome.min.css';
+
+
 function App() {
 
   return (
     <>
-        <CartComponent></CartComponent>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<ProductListing />} />

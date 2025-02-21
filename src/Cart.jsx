@@ -1,9 +1,15 @@
 import "./Cart.css";
-import {Link } from "react-router-dom";
-import { useSelector } from 'react-redux'
-
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
+import { round } from 'lodash'
+import { decreaseCartItemQuantity, increaseCartItemQuantity } from './CartReducer'
 export function Cart(props) {
   const cartItems = useSelector((state) => state.cartItems)
+const dispatch = useDispatch()
+ const getCartTotal = () => {
+  return cartItems.reduce((total, item) => total + item.price * item.quantity, 0); // calculate the total price of the items in the cart
+};
+
   return (
     <>
        <div className="container bg-white">
@@ -26,19 +32,20 @@ export function Cart(props) {
                           <img src={pdata.image} alt="IMG" width="75px" />
                         </div>
                       </td>
-                      <td className="column-2">{pdata.title}</td>
+                      <td className="column-2">{pdata.title} {pdata.id}</td>
                       <td className="column-3">$ {pdata.price}</td>
-                      {/* <td className="column-4">{pdata.quantity}</td> */}
-
-                      <td className="column-4"><div className="_quantifier_p8w2b_1"><input type="button" value="-" /><input type="number" step="1" max="" value={pdata.quantity} /><input type="button" value="+" /></div></td>
-
+                      <td className="column-4"><div className="_quantifier_p8w2b_1">
+                        <button onClick={() => dispatch(decreaseCartItemQuantity({id: pdata.id}))}>-</button>
+                        <span>{pdata.quantity}</span>
+                        <button onClick={() => dispatch(increaseCartItemQuantity({id: pdata.id}))}>+</button>
+                      </div></td>
                       <td className="column-5">$ {pdata.quantity* pdata.price}</td>
                     </tr>
                 ))}
                 <tr>
                   <td className="column-3" colSpan="3">Total</td>
-                  <td className="column-4" > 5</td>
-                  <td className="column-5" >$ 2000</td>
+                  <td className="column-4" ></td>
+                  <td className="column-5" >$ {round(getCartTotal(), 2)}</td>
                 </tr>
               </tbody></table>
             </div>
