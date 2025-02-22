@@ -20,7 +20,7 @@ const dispatch = useDispatch()
               </div>
               <div className="title pt-4 pb-1">{title}</div>
               <div className="price"> $ {price}</div>
-              <button  className='btn btn-default btn-sm btn-dark'
+              <button className='btn btn-default btn-sm btn-dark'
                   onClick={() => {
                     dispatch(addCartItem({ id, title, price, image }))
                   }}
