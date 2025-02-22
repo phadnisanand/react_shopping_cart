@@ -49,8 +49,8 @@ useEffect(() => {
                 ))}
                 <tr>
                   <td className="column-3" colSpan="3">Total</td>
-                  <td className="column-4" ></td>
-                  <td className="column-5" >$ {round(getCartTotal(), 2)}</td>
+                  <td className="column-4"></td>
+                  <td className="column-5">${round(getCartTotal(), 2)}</td>
                 </tr>
               </tbody></table>
             </div>
