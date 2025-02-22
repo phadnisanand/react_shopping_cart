@@ -13,11 +13,11 @@ function Product({ id, title, price, image }) {
             <div className="title pt-4 pb-1"><Link to={`/productdetails/${id}`}>{title}</Link></div>
             <div className="price"> $ {price}</div>
             <div className="addtocart">
-            <button
+            <button className='btn btn-default btn-sm btn-dark'
               onClick={() => {
                 dispatch(addCartItem({ id, title, price, image }))
               }}
-            >Add to Cart
+            > Add to Cart
             </button>
 
             </div>

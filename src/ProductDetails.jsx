@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.css';
 import { addCartItem } from './CartReducer'
 export function ProductDetails(props) {
 const { id } = useParams();
@@ -10,8 +11,7 @@ const dispatch = useDispatch()
   return (
     <>
       <Link to="/">Product Page</Link> <br />
-      <Link to="/cart">Cart Page</Link> <br />
-        product details page. {id}
+        product details page.
         {matchingProducts.map(
           ({ id, title, price, image }) => (
             <div className="col-lg-6 justify-content-center product-item my-3">
@@ -24,7 +24,7 @@ const dispatch = useDispatch()
                   onClick={() => {
                     dispatch(addCartItem({ id, title, price, image }))
                   }}
-                >Add to Cart</button>
+                > Add to Cart</button>
             </div>
           )
         )}

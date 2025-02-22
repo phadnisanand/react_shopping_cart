@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 
 const findItemIndex = (state, action) =>
   state.findIndex((cartItem) => cartItem.id === action.payload.id)
@@ -24,18 +26,25 @@ const findItemIndex = (state, action) =>
 //   localStorage.setItem("totalQuantity", JSON.stringify(totalQuantity));
 // }
 
- const initialState = {
-   cartItems:  localStorage.getItem("cartItems")
-  };
+
+const items =
+   localStorage.getItem("cartItems") !== null
+    ? JSON.parse(localStorage.getItem("cartItems"))
+     : [];
 
 const slice = createSlice({
   name: 'cart',
-  initialState: [],
+  initialState: [...items],
   reducers: {
     addCartItem(state, action) {
       const existingItemIndex = findItemIndex(state, action)
       if (existingItemIndex !== -1) state[existingItemIndex].quantity += 1
       else state.push({ ...action.payload, quantity: 1 })
+      Swal.fire({
+      title: "Good job!",
+      text: "Product added to cart!",
+      icon: "success"
+    });
     },
     removeCartItem(state, action) {
       const existingItemIndex = findItemIndex(state, action)
