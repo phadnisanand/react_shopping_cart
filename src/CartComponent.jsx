@@ -4,7 +4,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 export function CartComponent(props) {
   const cartItems = useSelector((state) => state.cartItems)
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   /*let totalQty = 0;
   cartItems.map(
     ({ quantity}) => (
@@ -22,7 +22,6 @@ export function CartComponent(props) {
   return (
     <>
      <div className="wrapper">
-
         <span onClick={handleRedirectCart}><i className="fa">&#xf07a;</i> {getCartTotal()} </span>
       </div>
     </>

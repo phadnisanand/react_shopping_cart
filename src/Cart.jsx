@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
 import { round } from 'lodash'
 import { decreaseCartItemQuantity, increaseCartItemQuantity } from './CartReducer'
+import { useEffect } from "react";
 export function Cart(props) {
-  const cartItems = useSelector((state) => state.cartItems)
+const cartItems = useSelector((state) => state.cartItems)
 const dispatch = useDispatch()
- const getCartTotal = () => {
+const getCartTotal = () => {
   return cartItems.reduce((total, item) => total + item.price * item.quantity, 0); // calculate the total price of the items in the cart
 };
+
+useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
 
   return (
     <>

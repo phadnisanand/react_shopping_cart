@@ -17,8 +17,7 @@ function Product({ id, title, price, image }) {
               onClick={() => {
                 dispatch(addCartItem({ id, title, price, image }))
               }}
-            >
-              Add to Cart
+            >Add to Cart
             </button>
 
             </div>

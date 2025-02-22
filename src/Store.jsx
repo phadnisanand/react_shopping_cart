@@ -4,6 +4,7 @@ import productReducer from './productReducer'
 export const store = configureStore({
   reducer: {
     products: productReducer,
-    cartItems: cartReducer
+    cartItems: cartReducer,
+    searchValue: ''
   },
 })
