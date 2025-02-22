@@ -56,7 +56,7 @@ export function ProductListing(props) {
   return (
     <>
       <div className="container bg-white">
-          <h2>Products Listing</h2>
+          <h2>Anand Phadnis Shopping Demo</h2>
           <div className="row">
             <p>Search Products <input type='text' name="search" id="search" onChange={(e) => handleProductChange(e.target.value)}  /> </p>
             <p>Search by Category &nbsp;
