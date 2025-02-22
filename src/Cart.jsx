@@ -15,15 +15,14 @@ useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-
   return (
     <>
        <div className="container bg-white">
          <h2>Cart Page</h2>
           <Link to="/">Go to Product listing Page</Link>
           <div className="row">
-            <div className="wrap-table-shopping-cart">
-              <table className="table-shopping-cart">
+            <div className="table-responsive shopping-cart">
+              <table className="table">
                 <tbody><tr className="table_head">
                   <th className="column-1">Product</th>
                   <th className="column-2"></th>
