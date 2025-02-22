@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { addCartItem } from './CartReducer'
+import { addCartItem } from '../store/CartReducer'
 import { Link } from 'react-router-dom';
 
 function Product({ id, title, price, image }) {

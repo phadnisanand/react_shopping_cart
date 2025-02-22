@@ -2,7 +2,7 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
 import { round } from 'lodash'
-import { decreaseCartItemQuantity, increaseCartItemQuantity } from './CartReducer'
+import { decreaseCartItemQuantity, increaseCartItemQuantity } from '../../store/CartReducer'
 import { useEffect } from "react";
 export function Cart(props) {
 const cartItems = useSelector((state) => state.cartItems)

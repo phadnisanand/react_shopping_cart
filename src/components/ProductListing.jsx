@@ -1,7 +1,7 @@
 import Product from './Product';
 import { useSelector, useDispatch } from 'react-redux'
-import { searchProductsByCategory, searchProductByTitle,orderProductsByPrice } from './productReducer';
-import { products } from './Products';
+import { searchProductsByCategory, searchProductByTitle,orderProductsByPrice } from '../store/productReducer';
+import { products } from '../Products';
 import { uniqBy, upperCase } from 'lodash'
 export function ProductListing(props) {
   let productItems = useSelector((state) => state.products);

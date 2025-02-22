@@ -1,13 +1,13 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect } from 'react'
-import { ProductListing } from './ProductListing';
+import { ProductListing } from './components/ProductListing';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Cart } from './Cart';
-import { ProductDetails } from './ProductDetails';
+import { Cart } from './components/Cart/Cart';
+import { ProductDetails } from './components/ProductDetails';
 import { useSelector } from 'react-redux'
 import 'font-awesome/css/font-awesome.min.css';
-import { CartComponent } from './CartComponent';
+import { CartComponent } from './components/CartComponent';
 function App() {
   const cartItems = useSelector((state) => state.cartItems)
   useEffect(() => {

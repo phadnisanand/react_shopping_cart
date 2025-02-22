@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
-import { addCartItem } from './CartReducer'
+import { addCartItem } from '../store/CartReducer'
 export function ProductDetails(props) {
 const { id } = useParams();
 const productItems = useSelector((state) => state.products)

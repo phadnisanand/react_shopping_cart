@@ -1,4 +1,4 @@
-import { products } from './Products';
+import { products } from '../Products';
 import { createSlice } from '@reduxjs/toolkit'
 const DEFAULT_CATEGORY = "All"
 
